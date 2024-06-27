@@ -1,47 +1,191 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    text-decoration: none;
+}
+
 #bg {
-  -moz-animation: bg 60s linear infinite;
-  -webkit-animation: bg 60s linear infinite;
-  -ms-animation: bg 60s linear infinite;
-  animation: bg 60s linear infinite;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+    -moz-animation: slideRight 60s linear infinite;
+    -webkit-animation: slideRight 60s linear infinite;
+    -ms-animation: slideRight 60s linear infinite;
+    animation: slideRight 60s linear infinite;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 
-  background: url("../images/florian-schneider-799KfBloSFQ-unsplash-small.jpg") bottom left repeat-x #348cb2;
+    background: url("../images/autos-juntos.jpg") no-repeat center center fixed ;
+    background-size: cover;
 
-  height: 100%;
-  left: 0;
-  opacity: 1;
-  position: fixed;
-  top: 0;
-  width: 100%;
+    height: 100vh;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+#bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* White with 10% opacity */
+    z-index: -1; /* Place it behind the background image */
+}
+
+/* Definir la animación para mover el fondo hacia la derecha */
+@keyframes slideRight {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
 }
 
 #main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: white;
 }
 
 #header {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 90%;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header > h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+header nav{
+    margin: 30px 180px;
+    /* width: 90%;
+    display: flex; */
 }
 
 #header nav ul {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
 #header nav ul li {
-  margin: 0 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    background: url("../images/logo_transparent.png") no-repeat center center;
+    background-size: contain;
+    width: 250px;
+    height: 250px;
+    z-index: 2;
+    display: inline-block;
+}
+
+#header nav a:before {
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-radius: 100%;
+    border: solid 1px #fff;
+    display: block;
+    font-size: 1.75em;
+    height: 2.5em;
+    line-height: 2.5em;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 2.5em;
+    margin: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.icon > .label {
+    display: none;
+}
+
+#footer {
+    bottom: 0;
+    cursor: default;
+    /* height: 6em; */
+    height: auto;
+    left: 0;
+    /* line-height: 8em; */
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    font-size: 0.8em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight:bold;
+}
+
+.menu {
+    font-size: 2em;
+    text-decoration: none;
+    margin: 0 9px;
+    color: white;
+    font-weight:bold;
+    opacity: 0.75;
+}
+
+/* Responsive styles for screens with width less than 800px */
+@media screen and (width< 800px) {
+    header > h1 {
+        font-size: 2em;
+    }
+
+    .menu {
+        font-size: 1.5em;
+        margin: 5px;
+    }
+
+    #header nav ul {
+        justify-content: space-around; /* Ensure items are spaced out nicely */
+    }
+
+    #header nav ul li {
+        margin: 5px 0;
+    }
+
+    #logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    #footer {
+        padding-top: 10px;
+        /* font-size: 0.6em; */
+    }
 }
