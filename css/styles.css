@@ -74,7 +74,7 @@
 }
 
 header > h1 {
-    font-size: 3em;
+    font-size: 4em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -94,7 +94,7 @@ header nav{
 }
 
 #header nav ul li {
-    margin: 0;
+    margin: 15px 5px;
     padding: 0;
 }
 
@@ -113,7 +113,8 @@ header nav{
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     border-radius: 100%;
-    border: solid 1px #fff;
+    /* border: solid 1px #fff; */
+    border: 1px solid rgba(255, 255, 255, 0.5);
     display: block;
     font-size: 1.75em;
     height: 2.5em;
@@ -151,32 +152,60 @@ footer a {
     font-weight:bold;
 }
 
-.menu {
-    font-size: 2em;
+.menu{
+    font-size: 2.5em;
     text-decoration: none;
-    margin: 0 9px;
+    margin: 19px;
     color: white;
     font-weight:bold;
     opacity: 0.75;
 }
 
+.nav-menu a {
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes blancos con 10% de opacidad */
+    padding: 7px 4px; /* Añade espacio dentro del recuadro */
+    border-radius: 15px; /* Bordes redondeados opcionales */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con 20% de opacidad */
+}
+
+.nav-menu a:hover {
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordes blancos con 10% de opacidad */
+    padding: 7px 4px; /* Añade espacio dentro del recuadro */
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con 20% de opacidad */
+    color: rgb(31, 31, 31);
+    transition: all 0.4s ease-in-out;
+    /* border-radius: 100%; */
+}
+
+#header nav a:hover::before {
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordes blancos con 30% de opacidad */
+    /*padding: 7px 4px; /* Añade espacio dentro del recuadro */
+    /*border-radius: 15px; /* Bordes redondeados opcionales */
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con 50% de opacidad */
+    color: rgb(31, 31, 31); /* Cambiar el color del texto a negro */
+    transition: all 0.4s ease-in-out;
+}
+
 /* Responsive styles for screens with width less than 800px */
 @media screen and (width< 800px) {
     header > h1 {
-        font-size: 2em;
+        font-size: 3em;
     }
 
     .menu {
-        font-size: 1.5em;
+        font-size: 2.5em;
         margin: 5px;
     }
 
     #header nav ul {
         justify-content: space-around; /* Ensure items are spaced out nicely */
+        padding: 5px 0;
     }
 
     #header nav ul li {
         margin: 5px 0;
+        /* margin-top: 40px; */
+        padding: 10px 0;
     }
 
     #logo {
